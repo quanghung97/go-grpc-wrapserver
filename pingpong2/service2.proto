@@ -1,0 +1,14 @@
+syntax = "proto3";
+package service2;
+option go_package=".;pingpong2";
+
+message Ping2Request {
+}
+
+message Pong2Response {
+    bool ok = 1;
+}
+
+service PingPong2{
+    rpc Ping2(Ping2Request) returns (Pong2Response) {};
+}

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package main;
+package service;
 option go_package=".;pingpong";
 
 message PingRequest {

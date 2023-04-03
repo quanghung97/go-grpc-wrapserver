@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for service
+ * @fileoverview gRPC-Web generated client stub for service2
  * @enhanceable
  * @public
  */
@@ -8,7 +8,7 @@
 // versions:
 // 	protoc-gen-grpc-web v1.4.2
 // 	protoc              v4.22.0
-// source: service.proto
+// source: service2.proto
 
 
 /* eslint-disable */
@@ -20,7 +20,7 @@ const grpc = {};
 grpc.web = require('grpc-web');
 
 const proto = {};
-proto.service = require('./service_pb.js');
+proto.service2 = require('./service2_pb.js');
 
 /**
  * @param {string} hostname
@@ -30,7 +30,7 @@ proto.service = require('./service_pb.js');
  * @struct
  * @final
  */
-proto.service.PingPongClient =
+proto.service2.PingPong2Client =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -56,7 +56,7 @@ proto.service.PingPongClient =
  * @struct
  * @final
  */
-proto.service.PingPongPromiseClient =
+proto.service2.PingPong2PromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -77,63 +77,63 @@ proto.service.PingPongPromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.service.PingRequest,
- *   !proto.service.PongResponse>}
+ *   !proto.service2.Ping2Request,
+ *   !proto.service2.Pong2Response>}
  */
-const methodDescriptor_PingPong_Ping = new grpc.web.MethodDescriptor(
-  '/service.PingPong/Ping',
+const methodDescriptor_PingPong2_Ping2 = new grpc.web.MethodDescriptor(
+  '/service2.PingPong2/Ping2',
   grpc.web.MethodType.UNARY,
-  proto.service.PingRequest,
-  proto.service.PongResponse,
+  proto.service2.Ping2Request,
+  proto.service2.Pong2Response,
   /**
-   * @param {!proto.service.PingRequest} request
+   * @param {!proto.service2.Ping2Request} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.service.PongResponse.deserializeBinary
+  proto.service2.Pong2Response.deserializeBinary
 );
 
 
 /**
- * @param {!proto.service.PingRequest} request The
+ * @param {!proto.service2.Ping2Request} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.service.PongResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.service2.Pong2Response)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.service.PongResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.service2.Pong2Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.service.PingPongClient.prototype.ping =
+proto.service2.PingPong2Client.prototype.ping2 =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/service.PingPong/Ping',
+      '/service2.PingPong2/Ping2',
       request,
       metadata || {},
-      methodDescriptor_PingPong_Ping,
+      methodDescriptor_PingPong2_Ping2,
       callback);
 };
 
 
 /**
- * @param {!proto.service.PingRequest} request The
+ * @param {!proto.service2.Ping2Request} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.service.PongResponse>}
+ * @return {!Promise<!proto.service2.Pong2Response>}
  *     Promise that resolves to the response
  */
-proto.service.PingPongPromiseClient.prototype.ping =
+proto.service2.PingPong2PromiseClient.prototype.ping2 =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/service.PingPong/Ping',
+      '/service2.PingPong2/Ping2',
       request,
       metadata || {},
-      methodDescriptor_PingPong_Ping);
+      methodDescriptor_PingPong2_Ping2);
 };
 
 
-module.exports = proto.service;
+module.exports = proto.service2;
 
