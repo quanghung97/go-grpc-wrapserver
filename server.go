@@ -10,6 +10,7 @@ import (
 	"context"
 
 	"github.com/improbable-eng/grpc-web/go/grpcweb"
+	echo "github.com/percybolmer/grpcexample/echo"
 	pingpong "github.com/percybolmer/grpcexample/pingpong"
 	pingpong2 "github.com/percybolmer/grpcexample/pingpong2"
 
@@ -19,6 +20,7 @@ import (
 
 type Server struct {
 	pingpong.PingPongServer
+	echo.EchoServiceServer
 }
 
 type Server2 struct {
@@ -33,6 +35,13 @@ type grpcMultiplexer struct {
 // Ping fullfills the requirement for PingPong Server interface
 func (s *Server) Ping(ctx context.Context, ping *pingpong.PingRequest) (*pingpong.PongResponse, error) {
 	return &pingpong.PongResponse{
+		Ok: true,
+	}, nil
+}
+
+// Echo fullfills the requirement for PingPong Server interface
+func (s *Server) Echo(ctx context.Context, ping *echo.EchoRequest) (*echo.EchoResponse, error) {
+	return &echo.EchoResponse{
 		Ok: true,
 	}, nil
 }
@@ -106,6 +115,8 @@ func main() {
 	// Register the API server as a PingPong Server
 	// The register function is a generated piece by protoc.
 	pingpong.RegisterPingPongServer(apiserver, s)
+	echo.RegisterEchoServiceServer(apiserver, s)
+
 	pingpong2.RegisterPingPong2Server(apiserver2, s2)
 	// Start serving in a goroutine to not block
 	go func() {
