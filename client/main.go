@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/percybolmer/grpcexample/pingpong"
+	"github.com/quanghung97/grpcexample/pingpong"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 )

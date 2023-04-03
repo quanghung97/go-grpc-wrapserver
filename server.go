@@ -10,9 +10,9 @@ import (
 	"context"
 
 	"github.com/improbable-eng/grpc-web/go/grpcweb"
-	echo "github.com/percybolmer/grpcexample/echo"
-	pingpong "github.com/percybolmer/grpcexample/pingpong"
-	pingpong2 "github.com/percybolmer/grpcexample/pingpong2"
+	echo "github.com/quanghung97/grpcexample/echo"
+	pingpong "github.com/quanghung97/grpcexample/pingpong"
+	pingpong2 "github.com/quanghung97/grpcexample/pingpong2"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

@@ -1,4 +1,4 @@
-module github.com/percybolmer/grpcexample
+module github.com/quanghung97/grpcexample
 
 go 1.15
 

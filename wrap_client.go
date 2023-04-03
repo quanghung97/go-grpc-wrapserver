@@ -9,7 +9,7 @@
 // 	"context"
 
 // 	"github.com/improbable-eng/grpc-web/go/grpcweb"
-// 	pingpong "github.com/percybolmer/grpcexample/pingpong"
+// 	pingpong "github.com/quanghung97/grpcexample/pingpong"
 
 // 	"google.golang.org/grpc"
 // 	"google.golang.org/grpc/credentials"
